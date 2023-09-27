@@ -78,8 +78,7 @@ def title_by_year_range(matches: List[str]) -> List[str]:
     results = []
     print(matches)
     for movie in movie_db:
-        if int(matches[0]) == get_year(movie):
-            print(get_year(movie))
+     i = 1   
     return results
 
 
