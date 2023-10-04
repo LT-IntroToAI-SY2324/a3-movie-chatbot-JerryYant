@@ -132,7 +132,13 @@ def director_by_title(matches: List[str]) -> List[str]:
     Returns:
         a list of 1 string, the director of the movie
     """
-    return
+    results = []
+    
+    for movie in movie_db:
+        if get_title(movie) == matches[0]:
+         results.append(get_director(movie))
+
+    return results
 
 
 def title_by_director(matches: List[str]) -> List[str]:
@@ -143,8 +149,15 @@ def title_by_director(matches: List[str]) -> List[str]:
 
     Returns:
         a list of movies titles directed by the passed in director
-    """
-    return
+    """ 
+    results = []
+    
+    for movie in movie_db:
+        if get_director(movie) == matches[0]:
+         results.append(get_title(movie))
+
+    return results
+
 
 
 def actors_by_title(matches: List[str]) -> List[str]:
@@ -156,7 +169,14 @@ def actors_by_title(matches: List[str]) -> List[str]:
     Returns:
         a list of actors who acted in the passed in title
     """
-    return
+    results = []
+    
+    for movie in movie_db:
+        if get_title(movie) == matches[0]:
+         results = get_actors(movie)
+
+    return results
+
 
 
 def year_by_title(matches: List[str]) -> List[int]:
@@ -168,8 +188,13 @@ def year_by_title(matches: List[str]) -> List[int]:
     Returns:
         a list of one item (an int), the year that the movie was made
     """
-    return
+    results = []
+    
+    for movie in movie_db:
+        if get_title(movie) == matches[0]:
+         results.append(get_year(movie))
 
+    return results
 
 def title_by_actor(matches: List[str]) -> List[str]:
     """Finds titles of all movies that the given actor was in
@@ -180,7 +205,13 @@ def title_by_actor(matches: List[str]) -> List[str]:
     Returns:
         a list of movie titles that the actor acted in
     """
-    return
+    results = []
+    
+    for movie in movie_db:
+        if get_actors(movie) in get_actors(movie):
+         results.append(get_title(movie))
+
+    return results
 
 # dummy argument is ignored and doesn't matter
 def bye_action(dummy: List[str]) -> None:
@@ -218,7 +249,16 @@ def search_pa_list(src: List[str]) -> List[str]:
         a list of answers. Will be ["I don't understand"] if it finds no matches and
         ["No answers"] if it finds a match but no answers
     """
-    return
+    for pat, act in pa_list:
+       
+       mat = match(pat, act)
+       #print(pat)
+       #print(src)
+       #print(act)
+       if mat is not None:
+          answer = act(mat)
+          return answer if answer else ["No answers"]
+    return ["I don't understand"]
 
 def query_loop() -> None:
     """The simple query loop. The try/except structure is to catch Ctrl-C or Ctrl-D
