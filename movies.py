@@ -25,6 +25,17 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
         ],  # actors/actresses
     ),
     (
+        "Transformers",
+        "Michael Bay",
+        2007,
+        [
+            "Megan Fox",
+            "Shia LeBeouf",
+            "John Turtorro",
+            "Peter Cullen",
+        ]
+    ),
+    (
         "the big easy",
         "jim mcbride",
         1987,

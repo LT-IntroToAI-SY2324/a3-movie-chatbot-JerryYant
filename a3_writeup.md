@@ -7,7 +7,7 @@ Assignment 3 is all about creating this natural language query system.  In order
 It checks to see if both the title and year are in the list when you give it and it searches through the list until both matches, therwise it returns "I don't understand"
 
 2. What movie did you add to the `movies.py` file?  What year was it made? Any specific reason you added that movie?
-
+Transformers, made in 2007 with no reason at all
 
 3. What pattern / action did you add to the paList data structure?  Why do you think that is a useful pattern / action?
 
