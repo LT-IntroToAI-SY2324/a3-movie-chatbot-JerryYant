@@ -4,7 +4,7 @@ Assignment 3 is all about creating this natural language query system.  In order
 
 ## Reflection Questions
 1. In your own words describe the `search_pa_list` function.
-It loops the movie data list, looking at all the groups and patterns
+It checks to see if both the title and year are in the list when you give it and it searches through the list until both matches, therwise it returns "I don't understand"
 
 2. What movie did you add to the `movies.py` file?  What year was it made? Any specific reason you added that movie?
 
