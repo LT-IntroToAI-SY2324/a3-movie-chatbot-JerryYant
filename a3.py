@@ -252,9 +252,7 @@ def search_pa_list(src: List[str]) -> List[str]:
     for pat, act in pa_list:
        
        mat = match(pat, act)
-       #print(pat)
-       #print(src)
-       #print(act)
+       
        if mat is not None:
           answer = act(mat)
           return answer if answer else ["No answers"]
