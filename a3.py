@@ -208,7 +208,7 @@ def title_by_actor(matches: List[str]) -> List[str]:
     results = []
     
     for movie in movie_db:
-        if get_actors(movie) in get_actors(movie):
+        if matches[0] in get_actors(movie):
          results.append(get_title(movie))
 
     return results
