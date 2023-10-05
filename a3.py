@@ -213,6 +213,17 @@ def title_by_actor(matches: List[str]) -> List[str]:
 
     return results
 
+
+def actor_by_year(matches: List[str]) -> List[str]:
+   
+   results = []
+   
+   for movie in movie_db:
+      if get_actors == matches[0]:
+         results.append(get_year(movie))
+
+   return results
+
 # dummy argument is ignored and doesn't matter
 def bye_action(dummy: List[str]) -> None:
     raise KeyboardInterrupt
